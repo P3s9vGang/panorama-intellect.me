@@ -6,3 +6,6 @@ class Article(Model):
     info = TextField()
     image = TextField()
     date = DateField()
+
+    class Meta:
+        ordering = ["-date"]
