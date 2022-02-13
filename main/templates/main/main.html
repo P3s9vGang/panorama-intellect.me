@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<html>
+<head>
+    <title>ИА Панорама Интеллект</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="icon" href="{% static 'main/images/ia-panorama.png' %}" type="image/png">
+    <link rel="shortcut icon" href="{% static 'main/images/ia-panorama.png' %}" type="image/png">
+</head>
+<header>
+    <div style="color:gray">Все совпадения случайны. ИА Панорама Интеллект. Права защищены. 1991-2022</div><a style="margin-right: 65px; margin-top: -30px;" сlass="floating-button"> <img id="fckblsht" src="https://sun9-8.userapi.com/impg/mBonLLhh4Gk3oj0rtLzAnsOxItBVHdjA0NK-pQ/GbIgN6Weo5c.jpg?size=1015x871&quality=96&sign=bfafb18b9491fa162e2596a6de99292d&type=album"> </a>
+</header>
+<body>
+    {%for article in articles%}
+    <figure class="baha1493">
+        <figcaption>
+            <div class="image"><img src="{{ article.image }}" alt="ls-sample1" /></div>
+            <div class="date">{{ article.date }}</div>
+            <h3>{{ article.name }}</h3>
+            <p>
+                {{ article.info }}
+            </p>
+        </figcaption>
+    </figure>
+    {% endfor %}
+    <div id="wrapper">
+        <div id="header">
+            	Все без исключения приведённые на сайте panorama-intellect.me материалы являются сатирой и выдумкой.
+            Любые совпадения текстов panorama-intellect.me  с реальными личностями и событиями не преследуют
+            цели задеть чью-либо честь или достоинство или нанести урон деловой репутации, поскольку все
+            материалы ресурса panorama-intellect.me  создаются как сатирические фельетоны.
+        </div>
+    </div>
+</body>
+</html>
