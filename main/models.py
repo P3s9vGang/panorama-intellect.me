@@ -9,3 +9,9 @@ class Article(Model):
 
     class Meta:
         ordering = ["-date"]
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"
+
+
+    def __str__(self):
+        return '"{:<150}" от {}'.format(self.name, self.date)
