@@ -3,14 +3,21 @@ body {
   background-size: 30% 15%;
 }
 
-
 header {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   /* Для старых браузеров */
-  height: 5em;
+  height: 7.5em;
   /* Высота шапки */
-  background: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1613264702_1-p-sinii-fon-soti-1.jpg) no-repeat center bottom;
+  background: url('images/slide6.png') center;
   text-decoration-color: white;
+}
+
+.articles{
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
 }
 
 .baha1493 {
