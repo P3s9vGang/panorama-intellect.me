@@ -5,7 +5,7 @@ class Article(Model):
     name = TextField()
     info = TextField()
     image = TextField()
-    date = DateField()
+    date = DateField(auto_now_add = True)
 
     class Meta:
         ordering = ["-date"]
