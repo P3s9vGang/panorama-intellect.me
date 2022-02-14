@@ -11,19 +11,32 @@
     background: #ddb2c1;        /* цвет дорожки */
     border-radius: 20px;
 }
-body::-webkit-scrollbar-track{
+/* body::-webkit-scrollbar-track{
     border-radius: 0px;
-}
+} */
 *::-webkit-scrollbar-thumb {
     background-color: #2d2f2f;    /* цвет плашки */
     border-radius: 20px;       /* закругления плашки */
     border: 3px solid #57b380;  /* padding вокруг плашки */
 }
-body {
+/* body {
     background-color: #59ecb8;
     background-size: 30% 15%;
-}
+} */
 
+
+body {
+  background:
+    radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#ece9e9 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, blue 75px, green 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, red 76px, #a4a4a4 77px, transparent 78px, transparent 109px),
+  #fff;
+  background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+
+}
 
 span{
     display: flex;
