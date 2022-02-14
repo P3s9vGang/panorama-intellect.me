@@ -19,7 +19,6 @@ body::-webkit-scrollbar-track{
     border-radius: 20px;       /* закругления плашки */
     border: 3px solid #57b380;  /* padding вокруг плашки */
 }
-
 body {
     background-color: #59ecb8;
     background-size: 30% 15%;
@@ -93,6 +92,7 @@ section {
   display: inline-block;
 	background-color: lightseagreen: ;
 	background-size: 100%;
+	background: #666;
   height: 2vh;
   text-align: center;
   font-size: 22px;
