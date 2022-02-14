@@ -22,3 +22,6 @@ def offerpage(request):
             # redirect to a new URL:
             return HttpResponseRedirect('/main.html')
     return render(request, 'main/offer.html')
+
+def warning(request):
+	return render(request, 'main/warning.html')
