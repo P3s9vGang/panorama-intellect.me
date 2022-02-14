@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
@@ -19,20 +21,67 @@ body::-webkit-scrollbar-track{
 }
 
 body {
-  background: url(https://sun9-4.userapi.com/impg/n9CWM22_5-6RuA2m1gOb6Md997ae9ilqF7ElOg/gMM2K3yiPG8.jpg?size=400x165&quality=96&sign=46ee58889237e757419b0a13c93af668&type=album);
-  background-size: 30% 15%;
+    background: url(https://sun9-4.userapi.com/impg/n9CWM22_5-6RuA2m1gOb6Md997ae9ilqF7ElOg/gMM2K3yiPG8.jpg?size=400x165&quality=96&sign=46ee58889237e757419b0a13c93af668&type=album);
+    background-size: 30% 15%;
 }
 
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* Для старых браузеров */
-  height: 7.5em;
-  /* Высота шапки */
-  background: url('images/slide6.png') center;
-  text-decoration-color: white;
+span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
 }
+span a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+
+}
+span a:before,
+span a:after{
+  position: absolute;
+  content: "Предложить новость";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+span a:before{
+  color: #fff;
+  background: #000;
+  transform: rotateY(0deg) translateZ(25px);
+}
+span a:after{
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
+}
+span a:hover{
+  transform: translateY(30px) rotateX(-90deg);
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* Для старых браузеров */
+    height: 7.5em;
+    /* Высота шапки */
+    background-image: url('images/slide6.png');
+    text-decoration-color: white;
+}
+
+
 
 .articles{
     display: flex;
