@@ -26,5 +26,6 @@ def offerpage(request):
 def warning(request):
 	return render(request, 'main/warning.html')
 
+
 # def about(request):
 # 	return render(request, 'main/about.html')
