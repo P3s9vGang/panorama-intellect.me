@@ -6,16 +6,30 @@ admin.site.site_header = "Администрационная панель"
 
 class ArticleAdmin(admin.ModelAdmin):
     list_display = ('name','htmlimage','date')
+    list_display_links = ('name','htmlimage',)
+    fields = ('name', 'info', 'image', 'date', 'htmlimage')
+    readonly_fields = ('date','htmlimage')
 
     def htmlimage(self, object):
         return mark_safe(f'<img src = "{object.image}" style = "height: 50px;">')
+
+    htmlimage.short_description = "Картинка"
+
+    save_on_top = True
 
 class OffArticleAdmin(admin.ModelAdmin):
     list_display = ('name','date','htmlimage','is_accepted')
+    list_display_links = ('name','htmlimage',)
     list_editable = ('is_accepted',)
+    fields = ('name', 'info', 'image', 'date', 'htmlimage')
+    readonly_fields = ('date','htmlimage')
 
     def htmlimage(self, object):
         return mark_safe(f'<img src = "{object.image}" style = "height: 50px;">')
+
+    htmlimage.short_description = "Картинка"
+
+    save_on_top = True
 
 # Register your models here.
 admin.site.register(Article, ArticleAdmin)

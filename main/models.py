@@ -2,10 +2,10 @@ from django.db.models import *
 
 # Create your models here.
 class Article(Model):
-    name = TextField()
-    info = TextField()
-    image = TextField()
-    date = DateField(auto_now_add = True)
+    name = TextField(verbose_name = "Заголовок")
+    info = TextField(verbose_name = "Информация")
+    image = TextField(verbose_name = "Картинка")
+    date = DateField(auto_now_add = True, verbose_name = "Дата")
 
     class Meta:
         ordering = ["-date"]
@@ -13,11 +13,11 @@ class Article(Model):
         verbose_name_plural = "Новости"
 
 class OfferedArticle(Model):
-    name = TextField()
-    info = TextField()
-    image = TextField()
-    date = DateField(auto_now_add = True)
-    is_accepted = BooleanField()
+    name = TextField(verbose_name = "Заголовок")
+    info = TextField(verbose_name = "Информация")
+    image = TextField(verbose_name = "Картинка")
+    date = DateField(auto_now_add = True, verbose_name = "Дата")
+    is_accepted = BooleanField(verbose_name = "Опубликовано?")
 
     def save(self, *args, **kwargs):
         if self.is_accepted:
