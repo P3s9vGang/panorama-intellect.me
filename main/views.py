@@ -24,7 +24,7 @@ def offerpage(request):
     return render(request, 'main/offer.html')
 
 def warning(request):
-	return render(request, 'main/warning.pdf')
+	return render(request, 'main/warning.html')
 
 # def about(request):
 # 	return render(request, 'main/about.html')
