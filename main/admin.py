@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Article, OfferedArticle
+from .models import Article, OfferedArticle, Subscriber
 from django.utils.safestring import mark_safe
 
 admin.site.site_header = "Администрационная панель"
@@ -19,7 +19,7 @@ class ArticleAdmin(admin.ModelAdmin):
 
 class OffArticleAdmin(admin.ModelAdmin):
     list_display = ('name','date','htmlimage','is_accepted')
-    list_display_links = ('name','htmlimage',)
+    list_display_links = ('name','htmlimage')
     list_editable = ('is_accepted',)
     fields = ('name', 'info', 'image', 'date', 'htmlimage')
     readonly_fields = ('date','htmlimage')
@@ -31,6 +31,12 @@ class OffArticleAdmin(admin.ModelAdmin):
 
     save_on_top = True
 
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ('tgid','subdate')
+
+
+
 # Register your models here.
+admin.site.register(Subscriber, SubscriberAdmin)
 admin.site.register(Article, ArticleAdmin)
 admin.site.register(OfferedArticle, OffArticleAdmin)

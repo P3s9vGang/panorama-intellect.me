@@ -1,11 +1,29 @@
 from django.db.models import *
 
+import telebot as tb
+bot = tb.TeleBot('5144005351:AAF17je1fLUroxiFt_PAPyuwo9cE01UQq1o')
+
 # Create your models here.
+class Subscriber(Model):
+    tgid = TextField(unique = True, verbose_name = "Телеграм ID")
+    subdate = DateField(auto_now_add = True, verbose_name = "Дата подписки")
+
+    class Meta:
+        ordering = ["-subdate"]
+        verbose_name = "Подписчик"
+        verbose_name_plural = "Подписчики"
+
 class Article(Model):
     name = TextField(verbose_name = "Заголовок")
     info = TextField(verbose_name = "Информация")
     image = TextField(verbose_name = "Картинка")
     date = DateField(auto_now_add = True, verbose_name = "Дата")
+
+    def save(self, *args, **kwargs):
+        if not Article.objects.filter(id = self.id).exists():
+            for user in Subscriber.objects.all():
+                bot.send_message(int(user.tgid), 'На сайте "Панорама Интеллект" вышел новый пост😎:\n"{}"\nПодробнее -> https://panorama-intellect.me/'.format(self.name))
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ["-date"]
