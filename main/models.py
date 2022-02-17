@@ -42,6 +42,7 @@ class OfferedArticle(Model):
             Article(name = self.name, info = self.info, image = self.image, date = self.date).save()
             self.delete()
         else:
+            self.is_accepted = False
             super().save(*args, **kwargs)  # Call the "real" save() method.
 
     class Meta:
