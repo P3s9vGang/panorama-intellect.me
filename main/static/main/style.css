@@ -344,6 +344,10 @@ section {
     height: 100%;
 }
 
+.baha1493 figcaption *{
+    font-family: 'Montserrat', sans-serif;
+}
+
 .baha1493 {
     font-family: 'Open Sans', Arial, sans-serif;
     position: relative;
