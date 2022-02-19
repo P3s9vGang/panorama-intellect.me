@@ -9,7 +9,7 @@ class Subscriber(Model):
     subdate = DateField(auto_now_add = True, verbose_name = "Дата подписки")
 
     class Meta:
-        ordering = ["-subdate"]
+        ordering = ["-subdate","-id"]
         verbose_name = "Подписчик"
         verbose_name_plural = "Подписчики"
 
@@ -26,7 +26,7 @@ class Article(Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["-date","-id"]
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
 
@@ -46,6 +46,6 @@ class OfferedArticle(Model):
             super().save(*args, **kwargs)  # Call the "real" save() method.
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["-date","-id"]
         verbose_name = "Предложенная новость"
         verbose_name_plural = "Предложенные новости"
