@@ -6,5 +6,6 @@ urlpatterns = [
     path('main.html', views.newspage, name='newspage'),
     path('offer', views.offerpage, name='offerpage'),
 	path('warning', views.warning, name='usermode'),
+	path('requirements', views.requirements, name='usermode'),
 	# path('about', views.about, name='usermode'),
 ]
