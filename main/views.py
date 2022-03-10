@@ -82,6 +82,9 @@ def offerpage(request):
 def warning(request):
 	return render(request, 'main/warning.html')
 
+def donate(request):
+	return render(request, 'main/donate.html')
+
 def requirements(request):
 	return render(request, 'main/requirements.html')
 
