@@ -88,5 +88,7 @@ def donate(request):
 def requirements(request):
 	return render(request, 'main/requirements.html')
 
+def confirmation(request):
+	return render(request, 'main/confirmation.html')
 # def about(request):
 # 	return render(request, 'main/about.html')

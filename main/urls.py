@@ -8,5 +8,6 @@ urlpatterns = [
 	path('warning', views.warning, name='usermode'),
 	path('requirements', views.requirements, name='usermode'),
 	path('donate', views.donate, name='usermode'),
+	path('confirmation', views.confirmation, name='usermode'),
 	# path('about', views.about, name='usermode'),
 ]
