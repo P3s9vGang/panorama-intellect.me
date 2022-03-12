@@ -478,7 +478,7 @@ section {
 }
 
 
-@media (max-width: 1080px) {
+@media (orientation: portrait){
     .article {
         min-width: auto;
         max-width: none;
