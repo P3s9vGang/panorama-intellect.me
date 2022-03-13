@@ -487,6 +487,7 @@ section {
         width: 100%;
         height: auto;
         font-size: 25px;
+				margin: 0px;
     }
     .article .date{
         font-size: 18px;
