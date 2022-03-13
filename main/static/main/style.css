@@ -477,6 +477,10 @@ section {
     transform: translateX(1%);
 }
 
+.tradingview-widget-container {
+	height: 10% !important;
+	width: 100% !important;
+}
 
 @media (orientation: portrait){
     .article {
