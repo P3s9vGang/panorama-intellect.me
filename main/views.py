@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 import os
 from .models import Article, OfferedArticle, Subscriber
@@ -54,8 +54,8 @@ def plg():
 
 
 def newspage(request):
-    print(dir(request))
-    print(request.user)
+    if request.scheme == 'http' and request.META['HTTP_HOST'] != 'localhost:8000' and request.META['HTTP_HOST'] != '127.0.0.1:8000':
+        return redirect('https://{}'.format(request.META['HTTP_HOST']))
     global polling
     if not polling:
         try:
@@ -64,7 +64,8 @@ def newspage(request):
         except Exception as ex:
             print(ex)
     data = {
-        "articles" : Article.objects.all()
+        "articles" : Article.objects.all(),
+        "thispage" : 'https://{}'.format(request.META['HTTP_HOST'])
     }
     return render(request, 'main/main.html', data)
 

@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="{% static 'main/style.css' %}">
     <link rel="icon" href="{% static 'main/images/ia-panorama.png' %}" type="image/png">
     <link rel="shortcut icon" href="{% static 'main/images/ia-panorama.png' %}" type="image/png">
+    <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
 </head>
 <a href="#" сlass="floating-button"> <img id="fckblsht" src="{% static 'main/images/ia-panorama.png' %}"> </a>
 <header>
-    <span><a target="_blank" href="offer"></a></span>
-    <div class="notifications"><a target="_blank" href="https://t.me/PanoramaIntellectBot">Подписаться на рассылку</a></div>
+    <div class="headerbutton"><a target="_blank" href="offer">Предложить новость</a></div>
+    <div class="headerbutton"><a target="_blank" href="https://t.me/PanoramaIntellectBot">Подписаться на рассылку</a></div>
 </header>
 
 <body>
@@ -767,10 +768,10 @@
             </p>
 
             <div class="footer-icons">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-github"></i></a>
+                <a href="https://vk.com/share.php?url={{thispage}}" target="_blank"><i class="fa fa-vk">VK</i></a>
+                <a href="#"><i class="fa fa-twitter">-</i></a>
+                <a href="#"><i class="fa fa-linkedin">-</i></a>
+                <a href="#"><i class="fa fa-github">-</i></a>
             </div>
         </div>
         <div style="color:gray;">
