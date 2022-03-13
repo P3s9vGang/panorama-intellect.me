@@ -54,6 +54,8 @@ def plg():
 
 
 def newspage(request):
+    print(dir(request))
+    print(request.user)
     global polling
     if not polling:
         try:
