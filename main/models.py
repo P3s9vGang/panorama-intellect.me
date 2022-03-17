@@ -3,6 +3,15 @@ from django.db.models import *
 import telebot as tb
 bot = tb.TeleBot('5144005351:AAF17je1fLUroxiFt_PAPyuwo9cE01UQq1o')
 
+class Suggestion(Model):
+    message = TextField(verbose_name = "Предложение")
+    date = DateField(auto_now_add = True, verbose_name = "Дата предложения")
+
+    class Meta:
+        ordering = ['-date']
+        verbose_name = "Предложение"
+        verbose_name_plural = "Жалобы и предложения"
+
 # Create your models here.
 class Subscriber(Model):
     tgid = TextField(unique = True, verbose_name = "Телеграм ID")

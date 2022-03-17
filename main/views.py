@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 import os
-from .models import Article, OfferedArticle, Subscriber
+from .models import Article, OfferedArticle, Subscriber, Suggestion
 from .forms import ArticleOffer
 import telebot as tb
 from telebot import types
@@ -93,5 +93,15 @@ def requirements(request):
 
 def confirmation(request):
 	return render(request, 'main/confirmation.html')
+
+def suggest(request):
+    if request.method == 'POST':
+        msg = request.POST['suggestion']
+        try:
+            Suggestion(message = msg).save()
+        except Exception as ex:
+            print(ex)
+        return HttpResponseRedirect('/main.html')
+    return render(request, 'main/suggest.html')
 # def about(request):
 # 	return render(request, 'main/about.html')
