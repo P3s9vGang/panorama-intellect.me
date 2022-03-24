@@ -22,14 +22,6 @@ def start(message):
 
 @bot.message_handler(content_types=["text"])
 def handler(message):
-    if Subscriber.objects.filter(tgid = str(message.chat.id)).exists():
-        mk = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        btn = types.KeyboardButton("Отписаться")
-        mk.add(btn)
-    else:
-        mk = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        btn = types.KeyboardButton("Подписаться")
-        mk.add(btn)
     unsubmk=types.ReplyKeyboardMarkup(resize_keyboard=True)
     unsub=types.KeyboardButton("Отписаться")
     unsubmk.add(unsub)
