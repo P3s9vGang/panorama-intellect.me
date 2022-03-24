@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+﻿from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 import os
 from .models import Article, OfferedArticle, Subscriber, Suggestion
@@ -46,6 +46,8 @@ def handler(message):
             bot.send_message(message.chat.id, "Рассылка остановлена👌", reply_markup = submk)
         else:
             bot.send_message(message.chat.id, "Ты и не был подписан🙃", reply_markup = submk)
+    else:
+        bot.send_message(message.chat.id, message.text)
 
 polling = False
 
