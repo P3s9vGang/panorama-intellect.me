@@ -44,7 +44,7 @@ class OfferedArticle(Model):
     info = TextField(verbose_name = "Информация")
     image = TextField(verbose_name = "Картинка")
     date = DateField(auto_now_add = True, verbose_name = "Дата")
-    is_accepted = BooleanField(verbose_name = "Опубликовано?")
+    is_accepted = BooleanField(default = False, verbose_name = "Опубликовано?")
 
     def save(self, *args, **kwargs):
         if self.is_accepted:

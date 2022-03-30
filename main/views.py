@@ -86,6 +86,15 @@ def offerpage(request):
             return HttpResponseRedirect('/main.html')
     return render(request, 'main/offer.html')
 
+def previewoffers(request):
+    if request.user.is_staff:
+        data = {
+            "articles" : OfferedArticle.objects.all()
+        }
+        return render(request, 'main/previewoffers.html', data)
+    else:
+        return HttpResponseRedirect('/main.html')
+
 def warning(request):
 	return render(request, 'main/warning.html')
 
